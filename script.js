@@ -99,8 +99,9 @@ function contchange(s){
 		{
 			if(ch[j].value==s.value){
 				if(ch[j].style.backgroundColor!='rgb(107, 170, 101)'){
-				ch[j].style.backgroundColor=s.style.backgroundColor;}
-				ch[j].style.color="white";
+					if(!(ch[j].style.backgroundColor=='rgb(202,179,87)'&&s.style.backgroundColor=="rgb(120, 127, 127)")){
+				ch[j].style.backgroundColor=s.style.backgroundColor;
+				ch[j].style.color="white";}}
 			}
 		}
 	}
