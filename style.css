@@ -46,7 +46,7 @@ h2{
 	height:50px;
 	background:none;
 }
-#i1{
+.i1{
 	width:50px;
 	height:50px;
 }
@@ -62,6 +62,13 @@ h2{
 	background-color:#888888;
 	border:3px solid #4a4d62;
 	width:700px;
+}
+#im1{
+	position:absolute;
+	top:1vh;
+	left:25vw;
+	width:49vw;
+	height:98vh;
 }
 .strb{
 	display:inline-block;
