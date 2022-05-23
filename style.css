@@ -13,7 +13,7 @@ body{
 .let{
 	box-sizing: border-box;
 	text-align: center;
-	margin: 10px;
+	margin: 10px 11px;
 	height: 30px;
 	width: 30px;
 	font-size:20px;
@@ -37,7 +37,7 @@ h2{
 	margin:0px auto;
 }
 .f1{
-	width: 250px;
+	width: 265px;
 	margin: auto;
 }
 .b1{
@@ -55,6 +55,7 @@ h2{
 	border:3px solid #4a4d62;
 	margin: 0px auto;
 	background-color:#888888;
+	padding:3px;
 }
 #h4{
 	margin:3vh auto;

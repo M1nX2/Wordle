@@ -27,6 +27,7 @@ function lock(t){
 		t2[i].readOnly=true;
 	}
 	t.style.border="0px";
+	t.style.margin="3px";
 }
 function unlock(t){	
 	var t2=t.childNodes;
@@ -34,6 +35,7 @@ function unlock(t){
 		t2[i].readOnly=false;
 	}
 	t.style.border="3px #3f3f3f solid";
+	t.style.margin="0px";
 }
 function letter(e){
 	if((e.parentNode.lastChild!=e)&&(e.value!=""))e.nextSibling.focus();
@@ -164,6 +166,9 @@ function word(a){
 function check(a){
 	var l=event.key;
 	var r=/[А-Яа-я]/i;
+	var en=/[A-Za-z\[\]\'\,\.]/i;
+	if(l.search(en)>-1&&l.length==1&&(!(a.hasAttribute('readOnly')))){var rus=rusen(l.toLowerCase());a.value=rus;letter(a);}
+	
 	var d=a.parentNode.childNodes;
 	if((event.keyCode=='37')&&(a.parentNode.firstChild!=a)) a.previousSibling.focus();
 	if((event.keyCode=='39')&&(a.parentNode.lastChild!=a)) a.nextSibling.focus();
@@ -197,4 +202,41 @@ function darkmode(){
 	document.getElementById('h3').style.borderColor="black";
 	document.getElementById('h4').style.borderColor="black";		
 	}
+}
+function rusen(l){
+	switch(l){
+		case 'q':l='й';break;
+		case 'w':l='ц';break;
+		case 'e':l='у';break;
+		case 'r':l='к';break;
+		case 't':l='е';break;
+		case 'y':l='н';break;
+		case 'u':l='г';break;
+		case 'i':l='ш';break;
+		case 'o':l='щ';break;
+		case 'p':l='з';break;
+		case '[':l='х';break;
+		case ']':l='ъ';break;
+		case 'a':l='ф';break;
+		case 's':l='ы';break;
+		case 'd':l='в';break;
+		case 'f':l='а';break;
+		case 'g':l='п';break;
+		case 'h':l='р';break;
+		case 'j':l='о';break;
+		case 'k':l='л';break;
+		case 'l':l='д';break;
+		case ';':l='ж';break;
+		case '\'':l='э';break;
+		case 'z':l='я';break;
+		case 'x':l='ч';break;
+		case 'c':l='с';break;
+		case 'v':l='м';break;
+		case 'b':l='и';break;
+		case 'n':l='т';break;
+		case 'm':l='ь';break;
+		case ',':l='б';break;
+		case '.':l='ю';break;
+	}
+	return(l.toUpperCase());
 }
