@@ -166,7 +166,7 @@ function word(a){
 function check(a){
 	var l=event.key;
 	var r=/[А-Яа-я]/i;
-	var en=/[A-Za-z\[\]\'\,\.]/i;
+	var en=/[A-Za-z\[\]\'\,\.\;]/i;
 	if(l.search(en)>-1&&l.length==1&&(!(a.hasAttribute('readOnly')))){var rus=rusen(l.toLowerCase());a.value=rus;letter(a);}
 	
 	var d=a.parentNode.childNodes;
